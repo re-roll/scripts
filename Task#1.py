@@ -4,8 +4,8 @@ import re
 
 # ukol za 3 body
 def camel_to_snake_case(name):
-    """Transfer camelCaseNames to snake_case_names.
-
+    
+    """
     >>> camel_to_snake_case('camelCaseNameAllowed')
     'camel_case_name_allowed'
     >>> camel_to_snake_case('longVATNumber')
