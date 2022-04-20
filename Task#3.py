@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-# ukol za 2 body
 def first_odd_or_even(numbers):
     """Returns 0 if there is the same number of even numbers and odd numbers
        in the input list of ints, or there are only odd or only even numbers.
@@ -31,12 +30,14 @@ def first_odd_or_even(numbers):
 
     if (i == k) or (i == 0 and k != 0) or (i != 0 and k == 0):
         return 0
+   
     if i > k:
         for num in numbers:
             if (num % 2) != 0:
                 odd = num
                 break
         return odd
+    
     if i < k:
         for num in numbers:
             if (num % 2) == 0:
@@ -46,10 +47,8 @@ def first_odd_or_even(numbers):
 
 
 
-# ukol za 3 body
 def to_pilot_alpha(word):
-    """Returns a list of pilot alpha codes corresponding to the input word
-
+    """
     >>> to_pilot_alpha('Smrz')
     ['Sierra', 'Mike', 'Romeo', 'Zulu']
     """
