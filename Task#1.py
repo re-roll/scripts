@@ -2,7 +2,6 @@
 
 import re
 
-# ukol za 3 body
 def camel_to_snake_case(name):
     
     """
