@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
 
 from itertools import permutations
-from os import remove
 
 def all_permutations_substrings(a_str):
-    """Generates all permutations of all substrings of the input string
-    """
+    #Generates all permutations of all substrings of the input string
 
     return set(
         ''.join(item)
         for length in range(len(a_str)+1)
         for item in permutations(a_str, length))
         
-# max 2 points
-# the fuction needs to deal with very long lists of words so that the approach
-# has to be very efficient (no interest in slow solutions for toy test examples)
 def match_permutations_substrings(string, words):
+    
     """Generates all permutations of all substrings of the input string and
        returns a set of input words that match one of the permutations.
 
@@ -26,21 +22,15 @@ def match_permutations_substrings(string, words):
     True
 
     """
-
-    # permutations as a set
     
     perms = all_permutations_substrings(string)
-
     res = {x for x in perms if(x in words)}
 
-    return res                                       # your solution
+    return res                                      
 
 
-# max 1 point
-# the fuction needs to deal with very long input sequences of words so that 
-# the approach has to be very efficient (no interest in slow solutions for 
-# limited test examples)
 def uniq_srt(it):
+    
     """Returns the input sequence unified and sorted (according to the values)
 
     >>> uniq_srt([3, 3, 5, 3, 4, 2, 4])
@@ -52,17 +42,12 @@ def uniq_srt(it):
     """
 
     uniq_srt = sorted(it)
-
     new_uniq_srt = list(dict.fromkeys(uniq_srt))
 
-    return new_uniq_srt                                 # your solution
+    return new_uniq_srt                                 
 
-
-# max 2 points
-# the fuction needs to deal with very long input sequences of words so that 
-# the approach has to be very efficient (no interest in slow solutions for 
-# limited test examples)
 def uniq_orig_order(it):
+    
     """Returns the input sequence, items ordered by the order of their
        first appearance
 
@@ -73,11 +58,11 @@ def uniq_orig_order(it):
     ['a', 'b', 'r', 'k', 'd']
 
     """
+    
     uniq_orig_order = list(it)
-
     new_uniq_orig_order = list(dict.fromkeys(uniq_orig_order))
 
-    return new_uniq_orig_order                                       # your solution
+    return new_uniq_orig_order                                      
 
 
 if __name__ == "__main__":
