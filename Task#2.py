@@ -1,20 +1,19 @@
 #!/usr/bin/env python3
 
-# ukol za 2 body
 def she_says_he_says(she_says):
-    """Replaces y/i, removes spaces, returns reversed 
-
+    
+    """
     >>> she_says_he_says('ma rymu')
     'umiram'
     """
 
-    phonetic_she_says = she_says[::-1]                                 # vase reseni
-    compact = phonetic_she_says.replace(" ", "")                       # vase reseni
-    he_says = compact.replace("y", "i")                                # vase reseni
+    phonetic_she_says = she_says[::-1]                              
+    compact = phonetic_she_says.replace(" ", "")                      
+    he_says = compact.replace("y", "i")    
+    
     return he_says
 
 
-# ukol za 3 body
 def solfege(title_hymn):
     """Partitions the input string to (an optional) title, ': ', and the hymn,
        takes a sublist starting from the first string, skipping always two 
@@ -28,21 +27,14 @@ def solfege(title_hymn):
     'Ut, re, mi, fa, sol, la'
     """
 
-    # the input string partitioned to the title (if given) and the actual hymn
     if ':' in title_hymn:
         possible_title, hymn = title_hymn.split(": ")
     else:
-        hymn = title_hymn                                                # vase reseni
+        hymn = title_hymn                                                
 
-    # the hymn as a list of strings separated by ' '
-    hymn_list = hymn .split(" ")                                         # vase reseni
-    
-    # skipping always two strings, and ending 3 strings from the end
-    
-    skip2 = hymn_list[:-3:3]                                             # vase reseni
-
-    # the skip2 list as a string, ', ' as a separator
-    skip2_str = ', '.join(skip2)                                         # vase reseni
+    hymn_list = hymn .split(" ")                                         
+    skip2 = hymn_list[:-3:3]                                             
+    skip2_str = ', '.join(skip2)                                         
 
     return skip2_str
 
